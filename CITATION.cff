@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+title: "Representation-Invariant Geometry of Quantity"
+message: "If you use this formalization, please cite the archived release and associated paper."
+type: software
+authors:
+  - family-names: Massensini
+    given-names: Thiago
+version: 0.1.0
+license: Apache-2.0
+repository-code: "https://github.com/thiagomassensini/representation-invariant-quantity-geometry"

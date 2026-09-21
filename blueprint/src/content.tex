@@ -1,0 +1,24 @@
+% LeanBlueprint companion.
+% Each theorem receives both a stable paper label and an exact Lean declaration.
+
+\section{Foundational spine}
+
+\begin{definition}[Depth mass]
+  \label{def:depth-mass}
+  % \lean{RIQGFoundation.depthMass}
+  The mass assigned to depth $k$ in radix $b$ is $\mu_{b,k}=b^{-k}$.
+\end{definition}
+
+\begin{definition}[Quadratic amplitude]
+  \label{def:quadratic-amplitude}
+  % \lean{RIQGFoundation.QuadraticAmplitude}
+  A quadratic amplitude is compatible with depth mass when its squared norm equals $\mu_{b,k}$.
+\end{definition}
+
+\begin{theorem}[Quadratic half-scaling rigidity]
+  \label{thm:FND-007}
+  % \lean{RIQGFoundation.quadraticHalfScaling_unique}
+  % \leanok
+  \uses{def:depth-mass,def:quadratic-amplitude}
+  The unique scaling exponent compatible with the depth mass under a quadratic norm law is $\theta=\frac12$.
+\end{theorem}

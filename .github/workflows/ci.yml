@@ -1,0 +1,48 @@
+name: Formalization CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  foundation:
+    name: Foundation — zero axioms
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: leanprover/lean-action@v1
+        with:
+          lake-package-directory: foundation
+          build-args: --wfail
+          use-mathlib-cache: false
+          nanoda: true
+          nanoda-allow-sorry: false
+      - name: Audit foundational axiom surface
+        run: |
+          mkdir -p artifacts
+          cd foundation
+          lake env lean RIQGFoundation/Audit.lean | tee ../artifacts/foundation-axioms.txt
+          cd ..
+          python scripts/check_axioms.py --mode foundation artifacts/foundation-axioms.txt
+
+  analysis:
+    name: Analysis — pinned Mathlib and restricted axioms
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: leanprover/lean-action@v1
+        with:
+          lake-package-directory: analysis
+          build-args: --wfail
+          nanoda: true
+          nanoda-allow-sorry: false
+      - name: Audit analytic axiom surface
+        run: |
+          mkdir -p artifacts
+          cd analysis
+          lake env lean RIQG/Audit.lean | tee ../artifacts/analysis-axioms.txt
+          cd ..
+          python scripts/check_axioms.py --mode analysis artifacts/analysis-axioms.txt

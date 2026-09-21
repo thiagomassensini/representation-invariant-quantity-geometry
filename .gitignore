@@ -1,0 +1,12 @@
+.lake/
+**/.lake/
+artifacts/
+*.olean
+*.ilean
+*.trace
+blueprint/web/
+blueprint/print/
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.pdf
