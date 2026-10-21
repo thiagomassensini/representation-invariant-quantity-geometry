@@ -7,7 +7,7 @@
 *A formally verified study of what remains invariant when the representation of quantity changes.*
 
 [![Lean](https://img.shields.io/badge/Lean-4.32.0-blue)](https://lean-lang.org/)
-[![CI](https://github.com/thiagomassensini/representation-invariant-quantity-geometry/actions/workflows/ci.yml/badge.svg)](https://github.com/thiagomassensini/representation-invariant-quantity-geometry/actions/workflows/ci.yml)
+[![CI](https://github.com/thiagomassensini/representation-invariant-quantity-geometry/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/thiagomassensini/representation-invariant-quantity-geometry/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/License-Apache--2.0-green.svg)](LICENSE)
 
 </div>
